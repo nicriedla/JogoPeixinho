@@ -10,11 +10,13 @@ var config = {
         update: update 
     }
 };
+//a variável game guarda nela um "novo jogo phaser"
 var game = new Phaser.Game(config);
 var peixinho;
 
 //carregar os recursos do nosso jogo
 function preload(){
+    // load.image - carregar a imagem
     this.load.image("mar", "assets/bg_azul-escuro.png");
     this.load.image("logo", "assets/logo-inteli_branco.png");
     this.load.image("peixe", "assets/peixes/peixinho_laranja.png");
@@ -23,10 +25,12 @@ function preload(){
 }
 //criar e configurar elementos do jogo
 function create(){
+    // add.image - adicionar imagem
     this.add.image(400, 300, "mar");
-    this.add.image(400, 525, "logo").setScale(0.5); //realizar alterações no tamanho da imagem
+    // setScale - realizar alterações no tamanho da imagem
+    this.add.image(400, 525, "logo").setScale(0.5);
     // setOrigin - determina a origem daquela imagem
-    // setFlip - indica se a imagem deve ser espelhada horizontalmente ou verticalmente.
+    // setFlip - indica se a imagem deve ser espelhada horizontalmente ou verticalmente
     peixinho = this.add.image(400, 300, "peixe").setOrigin(0.5, 0.5).setFlip(true, false); 
     this.add.image(400, 300, "concha").setOrigin(4, -3); 
     this.add.image(400, 300, "concha").setOrigin(-4, -3); 
